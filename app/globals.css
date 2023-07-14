@@ -16,12 +16,27 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* body {} */
+@layer base {
+  body {
+    @apply text-sm bg-slate-100;
+  }
+}
+
+@layer components {
+  .input {
+    @apply rounded-sm bg-gray-100 shadow-sm outline-none py-1 px-2 text-gray-600 text-xs;
+  }
+
+  .input_cont {
+    @apply w-[50vw] flex flex-col space-y-1;
+  }
+
+  .btn_signup {
+    @apply bg-blue-500 py-1 px-3 rounded-sm hover:opacity-90 transition-opacity duration-200;
+  }
+
+  .input_error {
+    @apply text-red-500 text-[10px] italic;
+  }
 }
