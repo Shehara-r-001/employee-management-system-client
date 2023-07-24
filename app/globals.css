@@ -25,15 +25,19 @@
 
 @layer components {
   .input {
-    @apply rounded-sm bg-gray-100 shadow-sm outline-none py-1 px-2 text-gray-600 text-xs;
+    @apply h-9 w-full rounded border py-1 px-2 text-sm outline-none focus:shadow-md transition-shadow duration-200;
+  }
+
+  .input_label {
+    @apply text-gray-700 font-semibold;
   }
 
   .input_cont {
-    @apply w-[50vw] flex flex-col space-y-1;
+    @apply flex flex-col space-y-1;
   }
 
   .btn_signup {
-    @apply bg-blue-500 py-1 px-3 rounded-sm hover:opacity-90 transition-opacity duration-200;
+    @apply bg-blue-500 w-2/5 py-2 px-3 rounded font-semibold text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-600  transition-all duration-500 hover:shadow-cyan-500;
   }
 
   .input_error {

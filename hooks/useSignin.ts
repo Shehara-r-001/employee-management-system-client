@@ -2,18 +2,16 @@ import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 
 import { SignupInputs } from '@/app/auth/Models/Signup.model';
+import { BASE_URL } from '@/constants/env.constants';
 import { IResponse } from '@/models/Response';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
-const signUp = async (signupInputs: SignupInputs) => {
+const signin = async (signInInputs: SignupInputs) => {
   const response = await axios.post<IResponse<string>>(
-    `${BASE_URL}/users/admin/signup`,
-    signupInputs
+    `${BASE_URL}/users/auth/signin`,
+    signInInputs
   );
+
   return response.data;
 };
 
-export const useSignUp = () => {
-  return useMutation(signUp);
-};
+export const useSignIn = () => useMutation(signin);
